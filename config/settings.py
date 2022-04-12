@@ -35,7 +35,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'blog.apps.BlogConfig'
+    'taggit',
+    "debug_toolbar",
+    'blog.apps.BlogConfig',
 ]
 
 MIDDLEWARE = [
@@ -46,6 +48,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "debug_toolbar.middleware.DebugToolbarMiddleware"
 ]
 
 ROOT_URLCONF = 'config.urls'
@@ -123,3 +126,10 @@ EMAIL_HOST_USER = '11meyal@gmail.com'
 EMAIL_HOST_PASSWORD = ''  # https://myaccount.google.com/lesssecureapps
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
+
+# Django Debug Toolbar
+INTERNAL_IPS = [
+    # ...
+    "127.0.0.1",
+    # ...
+]
